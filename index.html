@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+    <title>ІППММ ім. Я. С. Підстригача НАН України</title>
+    <link rel="stylesheet" href="./css/style.css">
+     <link rel="stylesheet" href="./css/modals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:italic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+ <div class="container nav-wrapper">
+<a href="index.html" class="brand-link">
+        <div class="brand">
+            <img src="./pictures/logo.jpg" alt="ІППММ" class="main-logo">
+            <div class="brand-text">
+                <span class="inst-name">Інститут прикладних проблем механіки і <br> математики  ім. Я. С. Підстригача </span>
+                <span class="sub-name">Національна академія наук України</span>
+            </div>
+        </div>
+</a>
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Інститут <span>▼</span></a>
+                    <ul class="dropdown-menu">
+			<li><a href="history.html">Історія</a></li>
+                        <li><a href="adm.html">Адміністрація</a></li>
+			<li><a href="sci_council.html">Вчена рада</a></li>
+                        <li><a href="./departments/departments-list.html">Відділи</a></li>
+                        <li><a href="public-org.html">Громадські організації</a></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Наука <span>▼</span></a>
+                    <ul class="dropdown-menu">
+			<li><a href="directions.html">Наукові напрямки</a></li>
+                        <li><a href="research-themes.html">Теми НДР</a></li>
+                        <li><a href="conferences.html">Конференції</a></li>
+			<li><a href="international.html">Міжнародне співробітництво</a></li>
+			<li><a href="library.html">Бібліотека</a></li>
+ 			<li><a href="events-archive.html">Архів семінарів</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Видання <span>▼</span></a>
+			<ul class="dropdown-menu">
+                        <li><a href="periodicpublications.html">Періодичні видання</a></li>
+                        <li><a href="nperiodicpublications.html">Неперіодичні видання</a></li>
+                	</ul>
+		</li>
+                <li class="dropdown">
+    <a href="#" class="dropdown-toggle">Підготовка кадрів <span>▼</span></a>
+    <ul class="dropdown-menu">
+        <li><a href="asp.html">Аспірантура</a></li>
+        <li><a href="doct.html">Докторантура</a></li>
+        <li><a href="council.html">Спеціалізовані вчені ради</a></li>
+	<li><a href="rmv/rmv.html">Рада молодих вчених</a></li>
+<li><a href="intership.html">Стажування</a></li>
+    </ul>
+<li><a href="public-info.html">Прозорість</a></li>
+                
+                <li class="memorial-link"><a href="../InMemoriam/index.html">In memoriam</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+
+<div class="index-ticker">
+    <div class="container">
+        <span class="ticker-badge">Важливо!</span>
+        <div class="ticker-content">
+            Чорнова версія сайту. Дані можуть бути неповними та недостовірними! 
+        </div>
+    </div>
+</div>
+<section class="hero-section">
+    <div class="hero-visual" style="background-image: linear-gradient(to right, var(--bg-hero), transparent), url('./pictures/hero-bg.jpg'); opacity: 0.8;"></div>
+    <div class="container hero-grid">
+        <div class="hero-info">
+            <h1>Фундаментальні <span class="math-italic">дослідження</span> та математичне моделювання</h1>
+            <p><h2><span class="math-italic">складних фізико-механічних процесів</span></h2></p>
+            <div class="hero-actions">
+                <a href="directions.html" class="btn-primary">Наукові напрямки</a>
+                <a href="sci_council.html" class="btn-outline">Вчена рада</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <span class="badge">Найближчий семінар</span>
+            <h3>Проблеми нелінійної механіки</h3>
+            <p>Доповідач: д.ф.-м.н. Прізвище І.Пб.</p>
+            <time>18 лютого, 11:00 | Актовий зал</time>
+            <p><a href="javascript:void(0)" 
+   class="btn-text" 
+   onclick="openSeminarModal(
+       '15 Березня 2026', 
+       'Прізвище Ім\'я', 
+       'ІППММ НАН України, Львів', 
+       'Математичне моделювання контактної взаємодії', 
+       'У доповіді розглядається новий підхід до розв\'язання крайових задач...', 
+       'https://zoom.us/j/123456', 'Приєднатися до Zoom'
+   )">
+   Деталі та Zoom →
+</a></p>
+        </div>
+    </div>
+</section>
+<div class="index-ticker-light">
+    <div class="container">
+        <span class="ticker-label">Актуально</span>
+        <div class="ticker-text">
+            <strong>Оголошення:</strong> Інститут оголошує конкурс на заміщення вакантних посад наукових співробітників. 
+            <a href="javascript:void(0)" onclick="openFullNewsModal(
+                'Конкурс на заміщення вакантної посади', 
+                'Оголошення', 
+                `<p>Інститут оголошує конкурс на заміщення вакантної посади...</p>`, 
+                'docs/konkurs.pdf', 
+                'Умови конкурсу', 
+                'Дирекція інституту'
+            )">Детальніше →</a>
+        </div>
+    </div>
+</div>
+<main class="container main-grid">
+    <section class="news-section">
+        <h2 class="section-title">Новини</h2>
+        <div class="news-list">
+            <article class="card">
+                <time>12.02.2026</time>
+                <h4>Оголошено конкурс на заміщення посад</h4>
+                <a href="javascript:void(0)" class="btn-text" 
+   onclick="openFullNewsModal(
+    'Конкурс на заміщення вакантної посади', 
+    'Оголошення', 
+    '<p> Інститут прикладних проблем механіки і математики ім. Я.С.Підстригача НАН України оголошує конкурс на заміщення вакантних посад: відділ механіки деформівного твердого тіла - наукового співробітника  <br> відділ диференціальних рівнянь та теорії функцій - наукового співробітника (3 посади)  <br> відділ теорії фізико – механічних полів - наукового співробітника - молодшого наукового співробітника  <br> відділ алгебри - наукового співробітника відділ аналізу, геометрії та топології - старшого наукового співробітника  <br> відділ термомеханіки - молодшого наукового співробітника. <br> <br> Термін конкурсу – місяць від дня оголошення. <br> <br> Документи   подавати за адресою: <br> 79060, м. Львів, вул. Наукова, 3-б, кім. 207 <br> <br>Іногородніх Інститут житлом не забезпечує.</p>', 'docs/nan-awards.pdf', 
+    'Умови конкурсу',
+    'Директор Інституту<br>Р.М.Кушнір '
+   )">
+   Докладніше →
+</a>
+            </article>
+            <article class="card">
+                <time>05.02.2026</time>
+                <h4>Звітна сесія вченої ради за 2025 рік</h4>
+                <a href="#" class="btn-text">Читати далі →</a>
+            </article>
+        </div>
+        <a href="news-archive.html" class="btn-outline full-width">Архів усіх новин</a>
+    </section>
+
+    <aside class="journal-section">
+        <h2 class="section-title">Наші видання</h2>
+        <div class="card journal-card">
+            <div class="journal-cover">
+		<img src="./pictures/jour_1.jpg" alt="Обкладинка ММФМП">
+		</div>
+            <div class="journal-info">
+                <h4>Математичні методи та фізико-механічні поля</h4>
+                <p>Науковий журнал інституту (Scopus).</p>
+                <a href="http://journals.iapmm.lviv.ua/ojs/index.php/MMPMF/issue/current" class="btn-primary">Свіжий номер</a>
+            </div>
+	</div>
+        <div class="card journal-card">
+		 <div class="journal-cover">
+		<img src="./pictures/jour_2.jpg" alt="Обкладинка ППММ">
+		</div>
+
+	    <div class="journal-info">
+                <h4>Прикладні проблеми механіки і математики</h4>
+                <p>Науковий журнал інституту (категорія Б).</p>
+                <a href="http://journals.iapmm.lviv.ua/ojs/index.php/APMM/issue/current" class="btn-primary">Свіжий номер</a>
+            </div>
+
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="footer-left">
+            <strong>© 2026 ІППММ ім. Я.С. Підстригача НАН України</strong>
+	    <p>вул. Наукова, 3б, м. Львів, 79060</p>
+        </div>
+        <div class="footer-right">
+	   <a href="#">Стара версія сайту (архів)</a>
+            <a href="#">Prozorro</a>
+            <a href="https://www.nas.gov.ua/"><b>НАН України</b></a>
+            <a href="index.html">UA</a> / <a href="#">EN</a>
+        </div>
+    </div>
+</footer>
+<div id="newsModal" class="modal">
+    <div class="modal-content">
+        <div id="modalBody"></div>
+    </div>
+</div>
+<script src="script.js"></script>
+<script src="modals.js"></script>
+
+</body>
+</html>

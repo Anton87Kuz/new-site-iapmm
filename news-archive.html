@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+    <title>ІППММ ім. Я. С. Підстригача НАН України</title>
+    <link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/events.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:italic&display=swap" rel="stylesheet">
+
+<style>
+    /* Перевизначаємо колір тільки для тегів на цій сторінці */
+    .year-tags .tag:hover, 
+    .year-tags .tag.active {
+        background-color: var(--accent); !important; /* Наш інституцький синій */
+        border-color: #1e40af !important;
+        color: white !important;
+    }
+    
+    /* Також можна змінити колір активного таба, якщо ви їх лишили */
+    .tab-btn.active {
+        color: #1e40af !important;
+        border-bottom-color: #1e40af !important;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav-wrapper">
+<a href="index.html" class="brand-link">
+        <div class="brand">
+            <img src="./pictures/logo.jpg" alt="ІППММ" class="main-logo">
+            <div class="brand-text">
+                <span class="inst-name">Інститут прикладних проблем механіки і <br> математики  ім. Я. С. Підстригача </span>
+                <span class="sub-name">Національна академія наук України</span>
+            </div>
+        </div>
+</a>
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Інститут <span>▼</span></a>
+                    <ul class="dropdown-menu">
+			<li><a href="history.html">Історія</a></li>
+                        <li><a href="adm.html">Адміністрація</a></li>
+			<li><a href="sci_council.html">Вчена рада</a></li>
+                        <li><a href="./departments/departments-list.html">Відділи</a></li>
+                        <li><a href="public-org.html">Громадські організації</a></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Наука <span>▼</span></a>
+                    <ul class="dropdown-menu">
+			<li><a href="directions.html">Наукові напрямки</a></li>
+                        <li><a href="research-themes.html">Теми НДР</a></li>
+                        <li><a href="conferences.html">Конференції</a></li>
+			<li><a href="international.html">Міжнародне співробітництво</a></li>
+			<li><a href="library.html">Бібліотека</a></li>
+ 			<li><a href="events-archive.html">Архів семінарів</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Видання <span>▼</span></a>
+			<ul class="dropdown-menu">
+                        <li><a href="periodicpublications.html">Періодичні видання</a></li>
+                        <li><a href="nperiodicpublications.html">Неперіодичні видання</a></li>
+                	</ul>
+		</li>
+                <li class="dropdown">
+    <a href="#" class="dropdown-toggle">Підготовка кадрів <span>▼</span></a>
+    <ul class="dropdown-menu">
+        <li><a href="asp.html">Аспірантура</a></li>
+        <li><a href="doct.html">Докторантура</a></li>
+        <li><a href="council.html">Спеціалізовані вчені ради</a></li>
+	<li><a href="rmv/rmv.html">Рада молодих вчених</a></li>
+<li><a href="intership.html">Стажування</a></li>
+    </ul>
+<li><a href="public-info.html">Прозорість</a></li>
+                
+                <li class="memorial-link"><a href="../InMemoriam/index.html">In memoriam</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+
+<main class="container py-60">
+    <h1 class="section-title">Архів новин</h1>
+
+    <div class="archive-filters card">
+        <span style="font-weight: 600; white-space: nowrap;">Рік:</span>
+        <div class="year-tags">
+            <a href="javascript:void(0)" class="tag active" onclick="filterByYear(this, 'all')">Всі</a>
+            <a href="javascript:void(0)" class="tag" onclick="filterByYear(this, '2026')">2026</a>
+            <a href="javascript:void(0)" class="tag" onclick="filterByYear(this, '2025')">2025</a>
+        </div>
+    </div>
+
+    <div class="seminar-list">
+        <article class="archive-item event-item news-important" data-year="2026">
+            <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">Лют</span>
+                <span class="year">2026</span>
+            </div>
+            <div class="event-info">
+                <span class="event-label label-important">Важливо</span>
+                <h3 class="news-topic"><a href="#">Відкритий лист колективу ІППММ щодо фінансування наукових програм</a></h3>
+                <p class="news-excerpt">Співробітники інституту висловили офіційну позицію стосовно проєкту бюджету на наступний рік та підтримки молодих вчених.</p>
+                <div class="event-links">
+                    <a href="docs/letter.pdf" class="btn-text">Читати повністю ↗</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="archive-item event-item news-general" data-year="2026">
+            <div class="event-date">
+                <span class="day">10</span>
+                <span class="month">Січ</span>
+                <span class="year">2026</span>
+            </div>
+            <div class="event-info">
+                <span class="event-label label-general">Новини</span>
+                <h3 class="news-topic">Участь науковців інституту у міжнародному симпозіумі в Празі</h3>
+                <p class="news-excerpt">Представники відділу №21 представили результати досліджень у галузі математичного моделювання складних систем.</p>
+            </div>
+        </article>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="footer-left">
+            <strong>© 2026 ІППММ ім. Я.С. Підстригача НАН України</strong>
+	    <p>вул. Наукова, 3б, м. Львів, 79060</p>
+        </div>
+        <div class="footer-right">
+	   <a href="#">Стара версія сайту (архів)</a>
+            <a href="#">Prozorro</a>
+            <a href="https://www.nas.gov.ua/"><b>НАН України</b></a>
+            <a href="index.html">UA</a> / <a href="#">EN</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
