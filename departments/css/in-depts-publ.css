@@ -1,0 +1,231 @@
+:root {
+            --primary-dark: #001a33;
+            --accent-blue: #4da3ff;
+            --text-gray: #555;
+            --border-color: #eee;
+        }
+
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fdfdfd; }
+        
+
+
+    /* Навігація */
+        nav { background: var(--primary-dark); padding: 15px 5%; display: flex; justify-content: center; gap: 25px; }
+        nav a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; }
+        nav a:hover { color: var(--accent-blue); }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Швидкі посилання */
+        .quick-nav { background: #f0f4f8; padding: 20px; border-radius: 8px; margin-bottom: 40px; text-align: center; }
+        .quick-nav a { margin: 0 15px; text-decoration: none; color: var(--primary-dark); font-weight: bold; border-bottom: 2px solid transparent; }
+        .quick-nav a:hover { border-bottom-color: var(--accent-blue); }
+
+        h1 { color: var(--primary-dark); text-align: center; margin-bottom: 10px; }
+        .sub-title { text-align: center; color: var(--text-gray); margin-bottom: 50px; }
+
+        /* Стиль секцій */
+        .pub-section { margin-bottom: 60px; }
+        .section-header { 
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--primary-dark); padding-bottom: 10px; margin-bottom: 25px;
+        }
+        .section-header h2 { margin: 0; color: var(--primary-dark); }
+        .back-to-top { text-decoration: none; color: var(--accent-blue); font-size: 1.2rem; }
+
+        /* Список публікацій */
+        .pub-list { list-style: none; padding: 0; }
+        .pub-item { padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+        .pub-authors { font-weight: bold; color: #000; }
+        .pub-title { font-style: italic; color: var(--primary-dark); }
+        .pub-details { font-size: 0.9rem; color: var(--text-gray); }
+
+        /* Специфічні мітки */
+        .label { 
+            display: inline-block; padding: 2px 8px; border-radius: 4px; 
+            font-size: 0.75rem; font-weight: bold; margin-right: 10px; color: white;
+        }
+        .label-monograph { background: #8e44ad; } /* Пурпурний для книг */
+        .label-thesis { background: #27ae60; }    /* Зелений для дисертацій */
+        .label-article { background: #2980b9; }   /* Синій для статей */
+
+        footer { text-align: center; padding: 10px; background: #1a1a1a; color: #888; margin-top: 10px; }
+        
+        html { scroll-behavior: smooth; }
+.pdf-icon {
+    background: #e74c3c;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.archive-link {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.archive-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Нові мітки для патенту та метод. розробок */
+.label-patent { background: #f59e0b; }
+.label-method { background: #0ea5e9; }
+
+/* Робимо навігацію липкою */
+.sticky-nav {
+    position: sticky;
+    top: 0; /* Прилипає до самого верху */
+    z-index: 100;
+    background: rgba(240, 244, 248, 0.95); /* Напівпрозорий фон для ефекту скла */
+    backdrop-filter: blur(5px); /* Розмиття контенту під панеллю */
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--accent-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+display: flex;
+    justify-content: center; /* Центруємо посилання */
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-label {
+    font-weight: 700;
+    margin-right: 15px;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.quick-nav a {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.quick-nav a:hover {
+    background: var(--primary-dark);
+    color: white !important;
+    text-decoration: none;
+}
+
+/* Оскільки панель липка, додамо відступ для секцій, 
+   щоб заголовок не ховався ПІД панель при переході за посиланням */
+.pub-section {
+    scroll-margin-top: 80px; 
+    margin-bottom: 50px;
+}
+
+.nav-header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none; /* Ховаємо на десктопі */
+    background: var(--primary-dark);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* МОБІЛЬНА ВЕРСІЯ */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Показуємо кнопку */
+    }
+
+    .nav-links {
+        display: none; /* Ховаємо посилання в звичайному стані */
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Показуємо при кліку */
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid #e2e8f0;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Стилізація блоку PDF-архіву */
+.full-archive-notice {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.notice-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.notice-text h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.notice-text p {
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+/* Кнопка завантаження */
+.btn-pdf-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--primary-dark);
+    color: white !important;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-pdf-large:hover {
+    background: #002a52;
+    transform: translateY(-2px);
+}
+
+.pdf-tag {
+    background: #e74c3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}

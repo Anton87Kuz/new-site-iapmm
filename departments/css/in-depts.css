@@ -1,0 +1,161 @@
+.archive-filters {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.publication-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px 20px;
+    position: relative;
+    border-left: 4px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.publication-entry:hover {
+    border-left-color: var(--accent);
+    transform: translateX(5px);
+}
+
+.pub-type-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+.pub-authors {
+    display: block;
+    font-weight: 600;
+    color: #475569;
+}
+
+.pub-title {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 4px 0;
+}
+
+.pub-details {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.pub-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+}
+
+/* Кольорові акценти для різних типів */
+[data-type="patent"] { border-left-color: #f59e0b; } /* Золотистий для патентів */
+[data-type="book"] { border-left-color: #10b981; }   /* Зелений для книг */
+[data-type="article"] { border-left-color: var(--accent); }
+
+/* Оформлення міні-розділів всередині details */
+.details-content {
+    padding: 15px 20px;
+    background: #fcfdfe;
+    line-height: 1.5;
+}
+
+.staff-sub-block {
+    margin-bottom: 18px;
+}
+
+.staff-sub-block h4 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: var(--primary); /* Ваш синій колір */
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.staff-keywords {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 8px;
+}
+
+.staff-career-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.staff-career-list li {
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.staff-career-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Робимо заголовок двоколонковим */
+.staff-header {
+    display: flex;
+    justify-content: space-between; /* Розносить інфо вліво, кнопки вправо */
+    align-items: center;
+    padding: 15px 20px;
+    gap: 20px;
+}
+
+.staff-header-main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1; /* Займає весь вільний простір зліва */
+}
+
+/* Сітка для кнопок 2х2 */
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Дві рівні колонки */
+    
+    /* Збільшуємо відступ саме між колонками (column-gap) */
+    column-gap: 12px; 
+    row-gap: 6px;     /* Відступ між рядами */
+    
+    width: 170px;     /* Фіксована ширина всієї сітки, щоб кнопки мали запас місця */
+}
+
+/* Коригуємо кнопки */
+.badge-grid .btn-scholar-sm {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;       /* Кнопка займає всю ширину своєї комірки */
+    height: 28px;
+    
+    padding: 0 4px;    /* Мінімальні внутрішні відступи */
+    font-size: 0.75rem;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0 !important; /* Важливо: прибираємо зовнішні відступи зі scibase.css */
+}/* Адаптація для мобілок: якщо екран малий, кнопки стануть в ряд або підуть під текст */
+@media (max-width: 600px) {
+    .staff-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .staff-header-badges {
+        align-self: flex-end; /* Кнопки притиснуться вправо знизу на мобільних */
+    }
+}

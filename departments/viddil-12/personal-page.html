@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+    <title>Персональна сторінка науковця</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --text: #1a202c;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text);
+            background-color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        .profile-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* ЛОГІКА ПЕРЕМИКАННЯ: за замовчуванням показуємо тільки UA */
+        .profile-container [lang="en"] { display: none !important; }
+        
+        /* Коли активний клас lang-en, міняємо видимість */
+        .profile-container.lang-en [lang="uk"] { display: none !important; }
+        .profile-container.lang-en [lang="en"] { display: block !important; }
+        
+        /* Спеціальний випадок для рядкових елементів (кнопка назад) */
+        .profile-container.lang-en span[lang="en"] { display: inline !important; }
+
+        /* Перемикач мов */
+        .lang-switcher {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            display: flex;
+            gap: 5px;
+            background: var(--light-bg);
+            padding: 4px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            z-index: 10;
+        }
+
+        .lang-btn {
+            border: none;
+            background: none;
+            padding: 5px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .nav-back { margin-bottom: 30px; }
+        .nav-back a { text-decoration: none; color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+        
+        .profile-header { display: flex; gap: 40px; align-items: flex-start; padding-bottom: 40px; border-bottom: 2px solid var(--border); margin-bottom: 40px; }
+        .profile-photo { width: 240px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        
+        .profile-info h1 { font-size: 2.4rem; color: var(--primary); margin: 0; line-height: 1.2; }
+        .profile-rank { font-size: 1.1rem; color: #64748b; margin: 10px 0 20px 0; }
+        
+        .contact-box { background: var(--light-bg); padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; font-size: 0.95rem; }
+        
+        .badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: fit-content; }
+        .badge-grid a { padding: 6px 15px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-align: center; color: white; min-width: 85px; display: flex; align-items: center; justify-content: center; height: 28px; }
+        
+        .sc-gs { background-color: #4285f4; }
+        .sc-sc { background-color: #ff6600; }
+        .sc-orcid { background-color: #a6ce39; }
+        .sc-wos { background-color: #431110; }
+
+        .section { margin-bottom: 35px; }
+        .section h2 { font-size: 1.5rem; color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 15px; }
+        
+        .custom-list { list-style: none; padding: 0; }
+        .custom-list li { position: relative; padding-left: 20px; margin-bottom: 10px; }
+        .custom-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .profile-header { flex-direction: column; align-items: center; text-align: center; }
+            .lang-switcher { position: static; justify-content: center; margin-bottom: 20px; }
+            .profile-container { padding: 30px 20px; margin: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    
+    <div class="lang-switcher">
+        <button class="lang-btn ua-btn active" onclick="setLang('uk')">UA</button>
+        <button class="lang-btn en-btn" onclick="setLang('en')">EN</button>
+    </div>
+
+    <div class="nav-back">
+        <a href="lab12a.html">
+            <span lang="uk">← Повернутись до відділу</span>
+            <span lang="en">← Back to Department</span>
+        </a>
+    </div>
+
+    <header class="profile-header">
+        <img src="photo.jpg" alt="Photo" class="profile-photo">
+        
+        <div class="profile-info">
+            <h1 lang="uk">Симотюк Михайло Михайлович</h1>
+            <h1 lang="en">Mykhailo Simotyuk</h1>
+            
+            <p class="profile-rank" lang="uk">Завідувач лабораторії, доктор ф.-м. наук</p>
+            <p class="profile-rank" lang="en">Head of Laboratory, D.Sc. in Physics and Mathematics</p>
+            
+            <div class="contact-box">
+                <div>📧 <strong>Email:</strong> m.simotyuk@example.com</div>
+                <div lang="uk">📍 <strong>Кабінет:</strong> 402</div>
+                <div lang="en">📍 <strong>Office:</strong> 402</div>
+            </div>
+
+            <div class="badge-grid">
+                <a href="#" class="sc-gs" target="_blank">Scholar</a>
+                <a href="#" class="sc-sc" target="_blank">Scopus</a>
+                <a href="#" class="sc-orcid" target="_blank">ORCID</a>
+                <a href="#" class="sc-wos" target="_blank">WoS</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2 lang="uk">Наукові інтереси</h2>
+            <h2 lang="en">Research Interests</h2>
+            <p lang="uk">Дослідження задач із нелокальними умовами для диференціальних рівнянь із частинними похідними.</p>
+            <p lang="en">Investigation of problems with non-local conditions for partial differential equations.</p>
+        </section>
+
+        <section class="section">
+            <h2 lang="uk">Трудова діяльність</h2>
+            <h2 lang="en">Career</h2>
+            <ul class="custom-list">
+                <li lang="uk"><strong>2020 – дотепер:</strong> завідувач лабораторії.</li>
+                <li lang="en"><strong>2020 – present:</strong> Head of Laboratory.</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+<script>
+    function setLang(lang) {
+        const container = document.querySelector('.profile-container');
+        const btnUA = document.querySelector('.ua-btn');
+        const btnEN = document.querySelector('.en-btn');
+        
+        if (lang === 'uk') {
+            container.classList.remove('lang-en');
+            btnUA.classList.add('active');
+            btnEN.classList.remove('active');
+        } else {
+            container.classList.add('lang-en');
+            btnEN.classList.add('active');
+            btnUA.classList.remove('active');
+        }
+    }
+</script>
+</body>
+</html>
