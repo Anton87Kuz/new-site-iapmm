@@ -19,7 +19,7 @@ margin-bottom: 40px; line-height: 1.8; color: var(--text);
     position: relative;
     padding: 100px 0;
     background: linear-gradient(rgba(26, 54, 93, 0.75), rgba(26, 54, 93, 0.75)), 
-                url('../pictures/hero_asp.png') center/cover;
+                url('../pictures/hero_asp.jpg') center/cover;
     color: white;
     border-bottom: 3px solid var(--accent);
     margin-bottom: 0;
@@ -518,4 +518,5 @@ margin-bottom: 40px; line-height: 1.8; color: var(--text);
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+
 }
