@@ -1,0 +1,102 @@
+/* Використовуємо ваші кольори з :root */
+
+.lib-content .journal-card {
+    transition: box-shadow 0.2s;
+    border-left: 4px solid var(--border);
+}
+
+.lib-content .journal-card:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    border-left-color: var(--accent); /* Підсвітка при наведенні */
+}
+
+.info-box {
+    background-color: var(--bg-hero); /* Світло-сірий фон з вашого файлу */
+    border-left: 4px solid #f6ad55; /* Помаранчевий акцент для уваги (attention) */
+    color: var(--text);
+}
+
+.section-title {
+    /* Використовуємо ваш існуючий стиль заголовків секцій */
+    margin-top: 0;
+}
+
+/* Коригування для мобільних пристроїв */
+@media (max-width: 900px) {
+    .departments-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Оновлена секція Hero для бібліотеки */
+.lib-hero {
+    /* 1. Додаємо напівпрозорий темний або світлий оверлей, щоб текст був читабельним */
+    /* 2. Переконайтеся, що шлях до картинки вірний (наприклад, pictures/hero-bg.jpg) */
+    background: linear-gradient(rgba(26, 54, 93, 0.45), rgba(26, 54, 93, 0.45)), 
+                url('../pictures/lib-bg.png'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* або fixed для ефекту паралаксу */
+    
+    padding: 80px 0; /* Збільшуємо відступи, щоб картинку було видно */
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: -40px;
+    color: white; /* Змінюємо колір тексту для темного фону */
+}
+
+.lib-hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Коригуємо заголовки всередині Hero, щоб вони були білими */
+.lib-hero .page-title {
+    margin: 0;
+    color: #ffffff !important; 
+    font-size: 2.8rem;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Додаємо тінь для чіткості */
+}
+
+.lib-hero h2 {
+    color: #e2e8f0 !important; /* Світло-сірий для підзаголовка */
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+/* Мета-теги (заснування, примірники) */
+.lib-meta-tags {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #f1f5f9;
+}
+
+.lib-meta-tags span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1); /* Легка підкладка під іконки */
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+/* Виправлення для блоків контенту */
+.info-box {
+    background-color: var(--bg-hero);
+    border-left: 4px solid #f6ad55; /* Помаранчевий акцент */
+    padding: 20px;
+    margin: 25px 0;
+    color: var(--text);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .lib-hero { padding: 50px 0; }
+    .lib-hero .page-title { font-size: 2rem; }
+    .lib-meta-tags { flex-direction: column; gap: 10px; }
+}

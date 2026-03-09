@@ -1,0 +1,80 @@
+/* БАЗОВА ПІДКЛАДКА */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    overflow: hidden; /* Щоб не було подвійного скролу сторінки */
+}
+
+/* КОНТЕЙНЕР ВІКНА */
+.modal-content {
+    background-color: #fff;
+    margin: 5vh auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;         /* Робимо вікно гнучким */
+    flex-direction: column;
+    max-height: 90vh;      /* Вікно ніколи не вийде за межі екрана */
+    overflow: hidden;      /* Скрол буде тільки всередині тексту */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+/* Це змушує modalBody не створювати додатковий бар'єр для скролу */
+#modalBody {
+    display: contents;
+}
+
+/* --- СТИЛЬ ДЛЯ НОВИН --- */
+.type-news .modal-header-fixed {
+    background-color: var(--primary);
+    padding: 40px 40px 25px;
+    color: #fff;
+    flex-shrink: 0; /* Шапка завжди зверху, не стискається */
+    border-bottom: 4px solid var(--accent);
+}
+
+.type-news .close-modal { color: #fff; }
+
+/* ТУТ ПРАЦЮЄ СКРОЛ */
+.type-news .modal-scrollable-content {
+    padding: 30px 40px;
+    overflow-y: auto; /* Вмикаємо внутрішню прокрутку */
+    flex-grow: 1;    /* Займає весь доступний простір */
+}
+
+.type-news .modal-signature {
+    margin-top: 40px;
+    text-align: right;
+    font-weight: 600;
+    font-style: italic;
+    color: #475569;
+}
+
+.type-news .modal-doc-footer {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+}
+
+/* --- СТИЛЬ ДЛЯ СЕМІНАРІВ --- */
+.type-seminar .modal-seminar {
+    padding: 40px;
+    overflow-y: auto;
+}
+.type-seminar .close-modal { color: #334155; }

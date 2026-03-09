@@ -1,0 +1,284 @@
+/* Стилі документів */
+.doc-group { margin-bottom: 50px; }
+.doc-group h3 { 
+    color: var(--primary); 
+    margin-bottom: 20px; 
+    font-size: 1.4rem; 
+}
+
+.doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.doc-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.doc-item:hover {
+    border-color: var(--accent);
+    background: #f8fafc;
+}
+
+.doc-icon {
+    background: #e53e3e; /* Червоний колір для PDF */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 5px 8px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.doc-name {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.doc-meta {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-left: 15px;
+}
+
+/* Коробка для Prozorro */
+.highlight-box {
+    background: var(--bg-hero);
+    border-left: 5px solid var(--accent);
+}
+
+.highlight-box h3 { margin-top: 0; }
+
+
+/* Корекція для вкладки "Звіти", де є бокове меню */
+#reports .info-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+}
+
+/* Сітка для парних документів (Анотований + Повний) */
+.pair-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.report-year-block {
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.year-label {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* На мобільних пристроях робимо їх знову в стовпчик */
+@media (max-width: 768px) {
+    .pair-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Стиль для заголовка закупівлі всередині highlight-box */
+.procurement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .procurement-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Спеціальний колір іконки для нормативки закупівель */
+.procurement-icon {
+    background: #4a5568 !important;
+}
+
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.equip-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Акцентна рамка-лінія зверху */
+.equip-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.equip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-color: var(--accent);
+}
+
+.equip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.equip-header h4 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.equip-status {
+    font-size: 0.7rem;
+    background: #dcfce7;
+    color: #166534;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.equip-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.equip-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.85rem;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.equip-footer {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.btn-outline-sm {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-outline-sm:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Іконка для законодавства (синя) */
+.law-icon {
+    background: #1a365d !important; /* Ваш --primary колір */
+    font-size: 0.65rem !important; /* Трохи менший шрифт, щоб слово GOV влізло гарно */
+}
+
+/* Додамо невеличку іконку зовнішнього посилання в кінці, за бажанням */
+.doc-item[target="_blank"] .doc-meta::after {
+    content: " ↗";
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+
+
+/* Контейнер для доступу до інформації */
+.access-layout {
+    display: flex;
+    justify-content: space-between; /* Розсовує ліву і праву частини */
+    gap: 50px; /* Відстань між ними */
+    align-items: flex-start;
+}
+
+.access-main {
+    flex: 1; /* Займає весь вільний простір зліва */
+}
+
+.access-sidebar {
+    width: 350px; /* Фіксована ширина сайдбару */
+    padding: 25px;
+    background: #fffaf0; /* Ніжний кремовий фон */
+    border: 1px solid #feebc8;
+    border-radius: 12px;
+    flex-shrink: 0; /* Не дає сайдбару стискатися */
+}
+
+.sidebar-title {
+    color: #9c4221;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fbd38d;
+    padding-bottom: 10px;
+}
+
+.schedule-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #7b341e;
+}
+
+.sidebar-divider {
+    border: 0;
+    border-top: 1px solid #fbd38d;
+    margin: 15px 0;
+}
+
+.sidebar-note {
+    font-size: 0.8rem !important;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Адаптивність для мобілок */
+@media (max-width: 992px) {
+    .access-layout {
+        flex-direction: column;
+    }
+    .access-sidebar {
+        width: 100%;
+    }
+}

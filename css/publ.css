@@ -1,0 +1,199 @@
+/* Спеціальний стиль для журналу */
+.journal-showcase {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    padding: 30px;
+    background: linear-gradient(to right, #ffffff, #f7fafc);
+    align-items: center;
+}
+
+.journal-image img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.journal-meta {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.journal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Сітка для книг */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.book-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.book-card:hover { transform: translateY(-5px); }
+
+.book-cover-mini {
+    width: 120px;
+    height: 170px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Символічна іконка книги на заглушці */
+.book-cover-mini::after {
+    content: "📖";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    opacity: 0.3;
+}
+.book-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--bg-hero);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.book-info h4 { margin: 10px 0 5px; color: var(--primary); }
+.book-author { font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
+.book-desc { font-size: 0.85rem; color: #4a5568; margin-bottom: 15px; }
+
+@media (max-width: 700px) {
+    .journal-showcase { grid-template-columns: 1fr; text-align: center; }
+    .journal-image { width: 150px; margin: 0 auto; }
+    .journal-actions { justify-content: center; }
+    .books-grid { grid-template-columns: 1fr; }
+}
+
+/* Контейнер фільтрів */
+.publications-filter {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Теги років */
+.filter-row {
+    display: flex;
+    align-items: center; /* Вирівнює текст і кнопки по одній горизонтальній лінії */
+    gap: 15px;
+    width: 100%;
+}
+
+.year-tags {
+    display: flex;
+    align-items: center; /* Центрує елементи всередині контейнера тегів */
+    gap: 10px;
+    flex-grow: 1; /* Дозволяє контейнеру займати вільний простір для зміщення архіву */
+}
+
+.filter-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary);
+text-transform: uppercase;
+    letter-spacing: 0.5px;
+min-width: 100px;
+
+
+    white-space: nowrap; /* Щоб слово "Рік:" не розривалося */
+    line-height: 1;      /* Прибирає зайві відступи навколо тексту */
+}
+.tag {
+    padding: 6px 16px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.tag.active, .tag:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Баджі категорій */
+.category-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.badge-btn {
+    padding: 8px 18px;
+    background: #edf2f7;
+    border: none;
+    border-radius: 6px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.badge-btn.active, .badge-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Стиль мета-даних всередині картки */
+.book-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.category-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.mt-20 { margin-top: 20px; }
+
+/* Спеціальний клас для кнопки архіву */
+.year-tags .tag-archive {
+    margin-left: auto; /* Виштовхує кнопку вправо */
+    background-color: transparent;
+    border: 1px dashed var(--border);
+    color: var(--accent);
+}
+
+.year-tags .tag-archive:hover {
+    background-color: var(--accent);
+    color: white;
+    border-style: solid;
+}

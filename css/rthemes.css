@@ -1,0 +1,89 @@
+/* Теми НДР */
+.theme-card {
+    background: #f8fafc; /* Дуже легкий сіро-блакитний фон */
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавний перехід */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ефект при наведенні */
+.theme-card:hover {
+    background: #ffffff; /* Картка ніби "підсвічується" зсередини */
+    border-color: var(--accent); /* Рамка стає акцентною */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.05); /* М'яка тінь */
+    transform: translateY(-2px); /* Легке підняття */
+}.theme-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+.theme-number { color: #64748b; font-weight: 600; }
+.theme-status.active { 
+    color: #059669; 
+    background: #ecfdf5; 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+}
+/* Завершена тема (Нейтральний сірий) */
+.theme-status.closed { 
+    color: #4b5563;      /* Стриманий сірий */
+    background: #f3f4f6; /* Світло-сірий фон */
+    padding: 2px 8px; 
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+.theme-meta p { margin: 5px 0; font-size: 0.95rem; }
+.theme-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.sub-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* Ключові слова (Теги) */
+.theme-tags {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    font-size: 0.8rem;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 3px 10px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Додаємо тонку лінію ліворуч */
+.theme-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #cbd5e1; /* Нейтральний колір за замовчуванням */
+    transition: background 0.3s;
+}
+
+/* Якщо тема активна — смужка стає синьою/зеленою */
+.theme-card:has(.theme-status.active)::before {
+    background:  #059669;
+}
+
+/* При наведенні лінія стає яскравішою */
+.theme-card:hover::before {
+    width: 6px;
+}

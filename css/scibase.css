@@ -1,0 +1,65 @@
+
+
+/* Базовий контейнер */
+.scholar-box {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/* --- ВАРІАНТ 1: Компактні кнопки (ті, що ми вже обговорили) --- */
+.btn-scholar-sm {
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text);
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+/* --- ВАРІАНТ 2: Великі кнопки з логотипами --- */
+.btn-scholar-lg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary);
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-scholar-lg img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.btn-scholar-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+
+/* Колірні акценти для обох типів */
+.sc-gs:hover { color: #4285f4; border-color: #4285f4; }
+.sc-sc:hover { color: #ff6600; border-color: #ff6600; }
+.sc-wos:hover { color: #5e33bf; border-color: #5e33bf; }
+.sc-orcid:hover { color: #a6ce39; border-color: #a6ce39; }
+
+.scholar-box .btn-scholar-sm {
+    margin: 0 !important; /* Прибираємо зовнішні відступи, які можуть ламати ряд */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}

@@ -1,0 +1,248 @@
+.defense-page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background: #f8fafc; /* Дуже світлий сіро-блакитний фон для всього блоку */
+    border-radius: 12px;
+    border-top: 3px solid var(--accent);
+border-bottom: 3px solid var(--accent);
+}
+
+.defense-page-header .council-tag {
+    display: block;
+    color: var(--primary); /* Ваш основний синій */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.defense-page-header h1 {
+     margin: 15px 0;
+    font-size: 2.2rem;
+    color: #1e293b; /* Темно-синій (майже чорний), щоб виділятися на фоні всього іншого */
+    line-height: 1.2;
+}
+
+.defense-page-header .institute-ref {
+    margin-top: 5px;
+    color: var(--accent); /* Спокійний сірий колір */
+    font-size: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+
+.defense-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    align-items: start;
+}
+
+.topic-box {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.dissertation-title {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 1.3rem;
+    color: var(--primary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    margin-top: 0;
+text-transform: uppercase;
+}
+
+.members-list {
+    list-style: none;
+    padding: 0;
+}
+
+.members-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.highlight-card {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+}
+
+.event-date .date { font-size: 1.4rem; display: block; font-weight: 700; }
+.zoom-box {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.docs-vertical-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.doc-item-link {
+    display: block;
+    padding: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.review-block a {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: var(--accent);
+}
+
+.member-item {
+    display: grid;
+    grid-template-columns: 180px 1fr; /* Роль зліва, ПІБ та опис справа */
+    gap: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.member-item:last-child { border: none; }
+
+.member-role {
+    font-weight: 800; /* Максимальна жирність для дрібного шрифту */
+    color: #475569;   /* Темніший, солідний сіро-синій */
+    font-size: 0.75rem; /* Трохи зменшимо розмір, але додамо розрядку */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    /* Додаємо візуальний акцент */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Додаємо маленьку синю крапку або риску перед роллю */
+.member-role::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+.member-info strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.member-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px dashed var(--border);
+    margin: 20px 0;
+}
+
+/* Текст-розділювач між категоріями документів */
+.separator-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #475569;
+margin: 20px 0 10px 5px;
+    border-left: 3px solid var(--accent); /* Додаємо маленьку синю лінію зліва для стилю */
+    padding-left: 8px;
+}
+
+/* Групування відгуку та підпису */
+.doc-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Робимо підпис ближче до самого документа */
+    margin-bottom: 8px;
+}
+
+/* Спеціальний стиль для посилання на підпис (дрібніше) */
+.signature-link {
+    border-style: dashed !important; /* Робимо рамку пунктирною */
+    background: #fdfdfd !important;
+    transform: scale(0.95); /* Трохи менший розмір */
+    margin-left: 15px !important; /* Зсув вправо для ефекту вкладеності */
+}
+
+.signature-link .doc-icon {
+    background: #10b981 !important; /* Зелений колір для іконки підпису */
+}
+
+.council-foundation {
+    background: #f1f5f9; /* Світло-сірий фон, щоб виділити юридичну частину */
+    padding: 15px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #cbd5e1; /* Нейтральна сіра лінія зліва */
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #334155;
+}
+
+.council-foundation p {
+    margin: 0;
+}
+
+.council-foundation strong {
+    color: var(--primary); /* Виділяємо номери наказів вашим основним кольором */
+}
+
+/* Адаптація для планшетів та смартфонів */
+@media (max-width: 992px) {
+    .defense-grid {
+        display: flex;
+        flex-direction: column; /* Стекуємо блоки один під одним */
+        gap: 20px;
+    }
+
+    .defense-sidebar {
+        width: 100%; /* Sidebar займає всю ширину */
+        order: 2;    /* Гарантуємо, що він буде після основного контенту */
+    }
+
+    .defense-main {
+        width: 100%;
+        order: 1;
+    }
+
+    /* Додатково: робимо картку з Zoom та часом більш компактною на мобільних */
+    .highlight-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Для зовсім маленьких екранів (телефони) */
+@media (max-width: 480px) {
+    .defense-page-header h1 {
+        font-size: 1.5rem; /* Зменшуємо заголовок, щоб не вилазив */
+    }
+    
+    .dissertation-title {
+        font-size: 1.1rem; /* Назва дисертації теж трохи менша */
+    }
+}

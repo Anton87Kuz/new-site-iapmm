@@ -1,0 +1,103 @@
+/* Сітка відділів */
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.dept-preview-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+border: 3px solid #cbd5e1;
+    transition: transform 0.2s, border-color 0.2s;
+ background: #fcfcfd;
+}
+
+.dept-preview-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+	background: #f8fafc;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dept-number {
+    background: var(--bg-hero);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.dept-body h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.15rem;
+    color: var(--primary);
+    line-height: 1.4;
+}
+
+.dept-desc {
+    font-size: 0.95rem;
+    margin: 10px 0 15px 0;
+    color: #4a5568;
+}
+/* Контейнер списку лабораторій всередині картки */
+.dept-labs-list {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #e2e8f0; /* Пунктирна лінія для візуального розділення */
+}
+
+.lab-item {
+    display: flex;
+    align-items: flex-start; /* Вирівнювання по верхньому краю */
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* Тег з номером лабораторії (наприклад, 11а) */
+.lab-tag {
+    background: var(--bg-hero);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Стилізація посилання на лабораторію */
+.lab-link {
+    font-size: 0.95rem;
+    color: #4a5568; /* Спокійний сірий колір */
+    text-decoration: none; /* Прибираємо стандартне підкреслення */
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.lab-link:hover {
+    color: var(--accent); /* Колір змінюється на наш акцентний при наведенні */
+    text-decoration: underline; /* Підкреслення з'являється лише при наведенні */
+}.btn-text {
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивність для планшетів/телефонів */
+@media (max-width: 600px) {
+    .departments-grid { grid-template-columns: 1fr; }
+    .dept-preview-card { flex-direction: column; }
+}

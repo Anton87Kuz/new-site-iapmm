@@ -1,0 +1,77 @@
+/* Основний контейнер */
+.history-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Секція з чергуванням */
+.history-hero {
+    display: flex;
+    flex-direction: row; /* Фото зліва за замовчуванням */
+    gap: 50px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+}
+
+/* Клас для чергування (фото справа) */
+.history-hero.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Блок фото: займає максимум 40% ширини */
+.history-image {
+    flex: 0 0 40%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Підпис під фото */
+.image-caption {
+    margin-top: 15px;
+    font-family: "Georgia", serif; /* Окремий шрифт для підпису */
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #475569;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Блок тексту: займає решту місця */
+.history-lead {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    text-align: justify;
+}
+
+.history-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    text-align: justify;
+}
+
+
+/* Адаптація для мобільних */
+@media (max-width: 850px) {
+    .history-hero, 
+    .history-hero.reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .history-image {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}

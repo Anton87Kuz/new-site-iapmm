@@ -1,0 +1,247 @@
+
+
+/* --- 2. HERO СЕКЦІЯ --- */
+.page-hero.conference-hero {
+    background: linear-gradient(rgba(26, 54, 93, 0.45), rgba(26, 54, 93, 0.45)), 
+                url('../pictures/conf-bg.png') center/cover no-repeat;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+border-bottom: 3px solid var(--accent);
+
+}
+
+.page-hero .hero-title {
+    margin: 0;
+    color: white !important; 
+    font-size: 2.9rem;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Додаємо тінь для чіткості */
+}
+.page-hero .hero-subtitle {
+    margin: 2;
+    color: #ffffff !important; 
+    font-size: 1.3rem;
+    line-height: 1.1;
+    
+}
+
+
+/* --- 3. БАЗОВА КАРТКА (archive-item) --- */
+.archive-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+   animation: fadeIn 0.3s ease-in;
+}
+
+.archive-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+.archive-filters {
+    display: flex;        /* Вмикає гнучку розмітку в один рядок */
+    align-items: center;  /* Вирівнює текст "Рік:" та таги по вертикальній осі */
+    gap: 15px;            /* Робить фіксований відступ між написом і блоком тагів */
+    
+    /* Ваші існуючі стилі */
+    padding: 15px 25px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+/* Спільні стилі для дати */
+.event-date {
+    text-align: center;
+    padding: 15px 5px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+}
+
+.event-date .day { font-size: 1.4rem; font-weight: 800; line-height: 1.1; }
+.event-date .month { font-size: 0.8rem; text-transform: uppercase; font-weight: 600; margin-top: 5px; }
+.event-date .year { font-size: 0.8rem; opacity: 0.7; }
+
+/* Заголовки та стрілка ↗ */
+.event-info h3 a { text-decoration: none; color: inherit; }
+.event-info h3 a::after {
+    content: " ↗";
+    font-size: 0.85em;
+    opacity: 0.4;
+    transition: 0.2s;
+    display: inline-block;
+}
+.event-info h3 a:hover::after { opacity: 1; transform: translate(3px, -3px); }
+
+/* Мітки (Labels) */
+.event-label {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* --- 4. КОЛЬОРОВІ СТАНИ (ОСЬ ТУТ ПЛАШКИ ТА ТЛО) --- */
+
+/* Стан: АНОНС (Майбутня) */
+.event-item.upcoming .event-date { 
+    background: #ecfdf5; 
+    color: #059669; 
+    border-color: #a7f3d0; 
+}
+.event-item.upcoming .event-label { 
+    background: #10b981; 
+    color: white; 
+}
+
+/* Стан: ВІДБУВАЄТЬСЯ (Зараз) */
+.event-item.live .event-date { 
+    background: #065f46; 
+    color: white; 
+    border-color: #065f46; 
+}
+.event-item.live .event-label { 
+    background: #065f46; 
+    color: white; 
+}
+
+/* Стан: ЗАВЕРШЕНА / АРХІВ */
+.event-item.finished .event-date, 
+.past-event .event-date { 
+    background: #f3f4f6; 
+    color: #6b7280; 
+    border-color: #e5e7eb; 
+}
+.event-item.finished .event-label, 
+.past-event .event-label { 
+    background: #6b7280; 
+    color: white; 
+}
+.year-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.year-tags .tag {
+    padding: 5px 18px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+display: flex;
+    flex-wrap: wrap;      /* Якщо років буде багато, вони перенесуться на 2-й рядок */
+    gap: 10px;
+}
+
+.year-tags .tag.active, 
+.year-tags .tag:hover {
+    background: #065f46;
+    border-color: #065f46;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- СИНЯ ГАМА ДЛЯ СЕМІНАРІВ --- */
+.event-item.seminar .event-date { 
+    background: #eff6ff; 
+    color: var(--accent); 
+    border-color: var(--accent); 
+}
+.event-item.seminar .event-label { 
+    background: var(--accent); 
+    color: white; 
+}
+
+/* Оформлення блоку доповідача */
+.speaker-box {
+    margin-bottom: 15px;
+}
+.speaker-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1e293b;
+}
+.speaker-affiliation {
+    display: block;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Тема семінару (замість звичайного h3) */
+.seminar-topic {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+/* --- СТИЛІ ДЛЯ НОВИН (замість семінарів) --- */
+
+/* Загальна новина - спокійний синій */
+.event-item.news-general .event-date { 
+    background: #f1f5f9; 
+    color: var(--primary); 
+    border-color: var(--border); 
+}
+.event-item.news-general .event-label.label-general { 
+    background: var(--primary); 
+    color: white; 
+}
+
+/* Важлива новина/звернення - акцентний колір (наприклад, червоний або золотий) */
+.event-item.news-important .event-date { 
+    background: #fff5f5; 
+    color: #c53030; 
+    border-color: #feb2b2; 
+}
+.event-item.news-important .event-label.label-important { 
+    background: #e53e3e; 
+    color: white; 
+}
+
+/* Стиль заголовка новини */
+.news-topic {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.news-topic a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.news-topic a:hover {
+    color: var(--accent);
+}
+
+.news-excerpt {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}

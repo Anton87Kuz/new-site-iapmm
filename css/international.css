@@ -1,0 +1,189 @@
+/* --- 1. HERO ТА СТАТИСТИКА --- */
+.page-hero.international-hero {
+    width: 100%;
+    background: linear-gradient(rgba(26, 54, 93, 0.45), rgba(26, 54, 93, 0.45)), 
+                url('../pictures/world-bg.png') center/cover no-repeat;
+    color: white;
+    padding: 100px 0 140px;
+    text-align: center;
+}
+
+.page-hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; color: white;text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Додаємо тінь для чіткості */}
+.page-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    margin-top: -65px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-item { text-align: center; flex: 1; min-width: 150px; }
+.stat-number { display: block; font-size: 2.1rem; font-weight: 800; color: var(--accent); }
+.stat-label { color: #64748b; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+
+/* --- 2. ГРІД ПАРТНЕРІВ --- */
+.international-grid {
+    display: grid;
+    /* Фіксуємо 3 колонки для десктопа, на планшетах - 2, на мобільних - 1 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 40px;
+}
+.partner-card {
+    background:  #fcfcfd;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    border-top: 6px solid var(--accent); /* Ваш правильний синій */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+/* --- ВНУТРІШНЄ НАПОВНЕННЯ (Щоб не було пусто) --- */
+.partner-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border); /* Розділова лінія всередині */
+}
+
+.partner-list li {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+/* Адаптивність: перемикаємо на 2 та 1 колонку на менших екранах */
+@media (max-width: 1024px) {
+    .international-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .international-grid { grid-template-columns: 1fr; }
+}
+
+.partner-list a { text-decoration: none; color: var(--accent); font-weight: 600; }
+.partner-list small { display: block; color: #64748b; font-size: 0.85rem; margin-top: 2px; }
+
+/* Загальний стиль для обох блоків */
+.highlight-box {
+    background: #f8fafc;
+    border-left: 6px solid var(--accent); /* Синя лінія зліва */
+    padding: 40px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 20px;
+}
+
+.highlight-box h2 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.highlight-box p {
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 900px;
+    margin-bottom: 25px;
+}
+
+/* Перша секція: бейджі */
+.grant-logos {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.logo-badge {
+    background: #e2e8f0;
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Друга секція: кнопки мобільності */
+.mobility-links-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.m-btn {
+    text-decoration: none;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.m-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Відступи між блоками */
+.mt-60 { margin-top: 60px; }
+.mt-40 { margin-top: 40px; }
+/* --- 4. CALL TO ACTION (Синій блок) --- */
+.contact-cta {
+    text-align: center;
+    background: #1a365d;
+    color: white;
+    padding: 50px 30px;
+    border-radius: 15px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: white;
+    color: #1e40af;
+    padding: 12px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+
+.btn-cta:hover { background: #f1f5f9; transform: scale(1.05); }
+
+/* --- ДОПОМІЖНІ КЛАСИ --- */
+.section-subtitle { font-size: 1.8rem; font-weight: 700; margin-bottom: 25px; color: #0f172a; }
+.mt-60 { margin-top: 60px; }
+
+.country-flag {
+    font-size: 2.5rem;      /* Розмір прапора */
+    min-width: 45px;      /* Фіксована ширина, щоб назви країн починалися з однієї лінії */
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+}

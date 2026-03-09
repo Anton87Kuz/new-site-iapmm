@@ -1,0 +1,360 @@
+
+        /* Локальні стилі для Профспілки */
+        .prof-container { margin-top: 40px; margin-bottom: 60px; }
+        .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .leader-card {
+            display: flex; gap: 30px; background: #f8fafc;
+            padding: 30px; border-radius: 12px; border-left: 5px solid var(--primary);
+            margin-bottom: 40px; align-items: center;
+        }
+        .leader-photo { width: 150px; height: 180px; background: #e2e8f0; border-radius: 8px; object-fit: cover; }
+
+
+/* Сітка для членів профкому */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.member-small-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.member-small-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-color: var(--primary);
+}
+
+.member-photo-mini {
+    width: 60px;
+    height: 60px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #e2e8f0;
+}
+
+.member-photo-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-photo-mini span {
+    font-size: 1.5rem;
+}
+
+.member-name {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.member-role {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+Це тому, що ми створили новий клас .prof-description у HTML, але ще не додали його стилізацію у файл proff.css. Без стилів текст буде просто "голим" списком.
+
+Ось код, який потрібно додати у ваш файл proff.css, щоб цей опис виглядав акуратно, мав гарні відступи та іконки в списку:
+CSS
+
+/* Стилізація розширеного опису профспілки */
+.prof-description {
+    max-width: 900px; /* Обмежуємо ширину для кращого читання */
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 40px;
+}
+
+.prof-description p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.prof-description h4 {
+    color: var(--primary);
+    margin: 30px 0 15px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.prof-description ul {
+    list-style: none; /* Прибираємо стандартні крапки */
+    padding-left: 0;
+}
+
+.prof-description li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+}
+
+/* Додаємо гарні сині маркери замість звичайних крапок */
+.prof-description li::before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+    top: -2px;
+}
+
+.prof-description li strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Контакти профспілки */
+.prof-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.contact-card {
+    display: flex;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    background: var(--bg-hero);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.contact-card strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.contact-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.contact-notice {
+    background: #fff8f1;
+    border: 1px dashed #f6ad55;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.contact-notice h4 {
+    color: #9c4221;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Адаптивність для мобілок */
+@media (max-width: 768px) {
+    .prof-contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Статистика */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat-item {
+    background: var(--primary);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--bg-hero); /* Світло-блакитний акцент */
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Картки звіту */
+.report-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.report-card {
+    background: #f8fafc;
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    border-radius: 4px 12px 12px 4px;
+}
+
+.report-card h4 {
+    margin: 0 0 10px 0;
+    color: var(--primary);
+    font-size: 1.15rem;
+}
+
+.report-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Шапка сторінки з флексом */
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Для мобільних пристроїв */
+}
+
+/* Прибираємо нижній відступ у самого заголовка, бо він тепер у флекс-контейнері */
+.section-header-flex .section-title {
+    margin-bottom: 0;
+}
+
+/* Золотиста плашка */
+.urgent-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #fffaf0 0%, #fef3c7 100%);
+    border: 1px solid #f6ad55;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(246, 173, 85, 0.2);
+    animation: pulse-border 2s infinite;
+}
+
+.badge-icon {
+    font-size: 1.4rem;
+}
+
+.badge-text strong {
+    display: block;
+    color: #9c4221;
+    font-size: 0.9rem;
+}
+
+.badge-text a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 0.95rem;
+}
+
+@keyframes pulse-border {
+    0% { border-color: #f6ad55; }
+    50% { border-color: #ed8936; box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4); }
+    100% { border-color: #f6ad55; }
+}
+
+/* Адаптація під мобільні */
+@media (max-width: 768px) {
+    .section-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .urgent-badge {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.badge-text a:hover {
+    text-decoration: none;
+    color: #c05621; /* Трохи темніший колір при наведенні */
+}
+
+.external-link-block {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.external-link-block p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.nan-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: #f8fafc;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.nan-link:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+}
+
+.nan-icon {
+    font-size: 1.2rem;
+}
+
+.external-arrow {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
