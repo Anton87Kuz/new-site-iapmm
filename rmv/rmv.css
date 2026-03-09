@@ -10,7 +10,7 @@
     position: relative;
     /* Градієнт зміщений вліво, щоб текст був чітким */
     background: linear-gradient(90deg, rgba(26, 54, 93, 0.95) 0%, rgba(26, 54, 93, 0.7) 50%, rgba(26, 54, 93, 0.3) 100%), 
-                url('../pictures/rmv-bg.png') center/cover no-repeat;
+                url('../pictures/rmv-bg.jpg') center/cover no-repeat;
     padding: 70px 0;
     color: white;
     border-bottom: 5px solid var(--rmv-accent);
@@ -342,4 +342,5 @@
     text-align: center;
 }
 .social-box h4 { margin-top: 0; color: var(--rmv-dark); }
+
 .social-box p { font-size: 0.9rem; margin-bottom: 20px; }
