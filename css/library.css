@@ -33,7 +33,7 @@
     /* 1. Додаємо напівпрозорий темний або світлий оверлей, щоб текст був читабельним */
     /* 2. Переконайтеся, що шлях до картинки вірний (наприклад, pictures/hero-bg.jpg) */
     background: linear-gradient(rgba(26, 54, 93, 0.45), rgba(26, 54, 93, 0.45)), 
-                url('../pictures/lib-bg.png'); 
+                url('../pictures/lib-bg.jpg'); 
     
     background-size: cover;
     background-position: center;
@@ -99,4 +99,5 @@
     .lib-hero { padding: 50px 0; }
     .lib-hero .page-title { font-size: 2rem; }
     .lib-meta-tags { flex-direction: column; gap: 10px; }
+
 }
